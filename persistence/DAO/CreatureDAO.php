@@ -68,11 +68,11 @@ class CreatureDAO
         return $stmt->execute();
     }
 
-    public function delete($creature)
+    public function delete($id)
     {
         $query = "DELETE FROM " . CreatureDAO::CREATURE . " WHERE idCreature =?";
         $stmt = mysqli_prepare($this->conn, $query);
-        $idCreature = $creature->getIdCreature();
+        $idCreature = $id;
         mysqli_stmt_bind_param($stmt, 'i', $idCreature);
         return $stmt->execute();
     }
