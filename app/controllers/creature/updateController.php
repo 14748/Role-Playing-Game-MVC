@@ -1,0 +1,34 @@
+<?php
+require_once __DIR__ . '/../../../persistence/DAO/CreatureDAO.php';
+require_once __DIR__ . '/../../models/Creature.php';
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    editAction();
+}
+
+function editAction() {
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $desc = $_POST["desc"];
+    $avatar = $_POST["avatar"];
+    $power = $_POST["power"];
+    $life = $_POST["life"];
+    $weapon = $_POST["weapon"];
+
+    $creature = new Creature();
+    $creature->setIdCreature($id);
+    $creature->setName($name);
+    $creature->setDescription($desc);
+    $creature->setAvatar($avatar);
+    $creature->setAttackPower($power);
+    $creature->setLifeLevel($life);
+    $creature->setWeapon($weapon);
+
+    $candidateDAO = new CreatureDAO();
+    $candidateDAO->update($creature);
+
+    header('Location: ../../public/views/index.php');
+}
+
+?>
