@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function createAction() {
-    $id = $_POST["id"];
     $name = $_POST["name"];
     $desc = $_POST["desc"];
     $avatar = $_POST["avatar"];
@@ -16,7 +15,6 @@ function createAction() {
     $weapon = $_POST["weapon"];
 
     $creature = new Creature();
-    $creature->setIdCreature($id);
     $creature->setName($name);
     $creature->setDescription($desc);
     $creature->setAvatar($avatar);

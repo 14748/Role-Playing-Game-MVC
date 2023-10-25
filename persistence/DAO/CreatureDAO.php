@@ -36,10 +36,9 @@ class CreatureDAO
     public function insert($creature)
     {
         $query = "INSERT INTO " . CreatureDAO::CREATURE .
-            " (idCreature, name, description, avatar, attackPower, lifeLevel, weapon) VALUES(?, ?, ?, ?, ?, ?, ?)";
+            " (name, description, avatar, attackPower, lifeLevel, weapon) VALUES(?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->conn, $query);
 
-        $idCreature = $creature->getIdCreature();
         $name = $creature->getName();
         $description = $creature->getDescription();
         $avatar = $creature->getAvatar();
@@ -47,7 +46,7 @@ class CreatureDAO
         $lifeLevel = $creature->getLifeLevel();
         $weapon = $creature->getWeapon();
 
-        mysqli_stmt_bind_param($stmt, 'isssiis', $idCreature, $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
+        mysqli_stmt_bind_param($stmt, 'sssiis', $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
 
         return $stmt->execute();
     }

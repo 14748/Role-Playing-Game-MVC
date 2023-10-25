@@ -16,7 +16,6 @@ function retrieveObjectFromId() {
 
 }
 
-echo $currentCreature->getIdCreature();
 echo $currentCreature->getName();
 echo $currentCreature->getDescription();
 echo $currentCreature->getAvatar();

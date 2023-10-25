@@ -2,7 +2,6 @@
 ?>
 
 <form method="post" action="../../../controllers/creature/insertController.php">
-    <input name="id">
     <input name="name">
     <input name="desc">
     <input name="avatar">
