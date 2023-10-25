@@ -1,15 +1,14 @@
 <?php
-require_once __DIR__ . "/persistence/DAO/CreatureDAO.php";
+require_once __DIR__ . '/./utils/SessionUtils.php';
 
-$creatureDAO = new CreatureDAO();
-
-$creatures = $creatureDAO->selectAll();
-foreach ($creatures as $creature) {
-    echo $creature->getName() . "</br>";
-
-    //$creature->setName("Pepito1116565");
-    //$creatureDAO->update($creature);
-    //$creatureDAO->delete($creature);
-    //$creature->setIdCreature($creature->getIdCreature() + 1);
-    //$creatureDAO->insert($creature);
+if(SessionUtils::loggedIn())
+{
+    // User has already been logged
+    header("Location: app/private/views/index.php");
 }
+else
+{
+    // Not logged yet, anonimous access
+    header("Location: app/public/views/index.php");
+}
+?>
