@@ -10,4 +10,4 @@ foreach ($creatures as $creature) {
 
 ?>
 
-<a type="button" href="../../private/views/creature/insert.php">Agregar</a>
+<a href="user/signup.php">login</a>

@@ -21,7 +21,7 @@ function createAction() {
     SessionUtils::startSessionIfNotStarted();
     SessionUtils::setSession($user->getName());
 
-    header('Location: /../../private/views/index.php');
+    header('Location: ../../private/views/index.php');
 }
 
 ?>
