@@ -3,7 +3,7 @@
 class User{
 
     private $userid;
-    private $email;
+    private $name;
     private $password;
 
     public function getUserid() {
@@ -14,12 +14,12 @@ class User{
         $this->userid = $userid;
     }
 
-    public function getEmail() {
-        return $this->email;
+    public function getName() {
+        return $this->name;
     }
 
-    public function setEmail($email) {
-        $this->email = $email;
+    public function setName($name) {
+        $this->name = $name;
     }
 
     public function getPassword() {
