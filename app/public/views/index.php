@@ -10,4 +10,5 @@ foreach ($creatures as $creature) {
 
 ?>
 
-<a href="user/signup.php">login</a>
+<a href="user/signup.php">register</a>
+<a href="user/login.php">login</a>
