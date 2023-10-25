@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../../../../template/header.php";
 ?>
 
 <form method="post" action="../../../controllers/creature/insertController.php">

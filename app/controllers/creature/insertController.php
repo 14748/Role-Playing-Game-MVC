@@ -25,7 +25,7 @@ function createAction() {
     $candidateDAO = new CreatureDAO();
     $candidateDAO->insert($creature);
 
-    header('Location: ../../public/views/index.php');
+    header('Location: ../../private/views/index.php');
 }
 ?>
 

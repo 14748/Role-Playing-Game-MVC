@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/../../../models/Creature.php";
 require_once __DIR__ . "/../../../../persistence/DAO/CreatureDAO.php";
+require_once __DIR__ . "/../../../../template/header.php";
 
 $currentCreature = new Creature();
 
@@ -15,7 +15,7 @@ function retrieveObjectFromId() {
     return $creatureDAO->findCreatureById($id);
 
 }
-
+echo $currentCreature->getIdCreature();
 echo $currentCreature->getName();
 echo $currentCreature->getDescription();
 echo $currentCreature->getAvatar();
