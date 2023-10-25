@@ -10,3 +10,6 @@ foreach ($creatures as $creature) {
 $d = new CreatureDAO();
 $s = $d->findCreatureById(2);
 echo $s->privateCreatureHtml();
+?>
+
+<a type="button" href="./creature/insert.php">Agregar</a>
