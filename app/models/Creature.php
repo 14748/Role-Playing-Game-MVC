@@ -14,6 +14,22 @@ class Creature
 
     }
 
+    function privateCreatureHtml() {
+        $result = '<div>';
+        $result .= '<div>';
+        $result .= '<div>';
+        $result .= '<h2>' . $this->getName() . '</h2>';
+        $result .= '<p>' . $this->getDescription() . '</p>';
+        $result .= '<a type="button" href="creature/detail.php?id=' . $this->getIdCreature() . '">Detalles</a>';
+        $result .= '<a type="button" href="creature/update.php?id=' . $this->getIdCreature() . '">Modificar</a> ';
+        $result .= '<a type="button" href="../../controllers/creature/deleteController.php?id=' . $this->getIdCreature() . '">Borrar</a> ';
+        $result .= '</div>';
+        $result .= '</div>';
+
+
+        return $result;
+    }
+
     /**
      * @return mixed
      */

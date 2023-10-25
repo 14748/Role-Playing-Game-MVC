@@ -5,7 +5,7 @@ $creatures = indexAction();
 foreach ($creatures as $creature) {
     echo "
         <div>
-            <p>{$creature->getName()}</p>
+            <p>{$creature->privateCreatureHtml()}</p>
             
         </div>
     ";
