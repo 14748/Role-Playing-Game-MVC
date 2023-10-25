@@ -1,12 +1,12 @@
 <?php
 require_once __DIR__ . "/../../controllers/indexController.php";
+require_once __DIR__ . "/../../../persistence/DAO/CreatureDAO.php";
 $creatures = indexAction();
 
 foreach ($creatures as $creature) {
-    echo "
-        <div>
-            <p>{$creature->privateCreatureHtml()}</p>
-            
-        </div>
-    ";
+    echo $creature->privateCreatureHtml();
 }
+
+$d = new CreatureDAO();
+$s = $d->findCreatureById(2);
+echo $s->privateCreatureHtml();

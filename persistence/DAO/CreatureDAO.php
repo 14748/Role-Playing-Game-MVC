@@ -6,6 +6,7 @@ class CreatureDAO
 {
     const CREATURE = 'creature';
     private $conn = null;
+
     public function __construct()
     {
         $this->conn = PersistentManager::getInstance()->get_connection();
@@ -77,7 +78,28 @@ class CreatureDAO
         return $stmt->execute();
     }
 
+    public function findCreatureById($id)
+    {
+        $query = "SELECT * FROM " . CreatureDAO::CREATURE . " WHERE idCreature=?";
+        $stmt = mysqli_prepare($this->conn, $query);
+        mysqli_stmt_bind_param($stmt, 'i', $id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $idCreature, $name, $description, $avatar, $attackPower, $lifeLevel, $weapon);
+        $creature = new Creature();
 
+        if (mysqli_stmt_fetch($stmt)) {
+            $creature->setIdCreature($idCreature);
+            $creature->setName($name);
+            $creature->setDescription($description);
+            $creature->setAvatar($avatar);
+            $creature->setAttackPower($attackPower);
+            $creature->setLifeLevel($lifeLevel);
+            $creature->setWeapon($weapon);
+        }
+
+        return $creature;
+
+    }
 }
 
 ?>
