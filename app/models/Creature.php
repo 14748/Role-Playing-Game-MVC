@@ -30,6 +30,20 @@ class Creature
         return $result;
     }
 
+    function publicCreatureHtml() {
+        $result = '<div>';
+        $result .= '<div>';
+        $result .= '<div>';
+        $result .= '<h2>' . $this->getName() . '</h2>';
+        $result .= '<p>' . $this->getDescription() . '</p>';
+        $result .= '<a type="button" href="creature/detail.php?id=' . $this->getIdCreature() . '">Detalles</a>';
+        $result .= '</div>';
+        $result .= '</div>';
+
+
+        return $result;
+    }
+
     /**
      * @return mixed
      */
