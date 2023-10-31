@@ -4,10 +4,26 @@ require_once __DIR__ . "/../../../persistence/DAO/CreatureDAO.php";
 require_once __DIR__ . "/../../../template/header.php";
 $creatures = indexAction();
 
-foreach ($creatures as $creature) {
-    echo $creature->privateCreatureHtml();
-}
-
 ?>
 
-<a type="button" href="./creature/insert.php">Agregar</a>
+<div class="container">
+    <?php
+    $count = 0;
+    foreach ($creatures as $creature) {
+        if ($count % 4 == 0) {
+            if ($count > 0) {
+                echo "</div>";
+            }
+            echo '<div class="row mt-2">';
+        }
+
+        echo $creature->privateCreatureHtml();
+
+        $count += 1;
+
+        if ($count == count($creatures) && $count % 4 != 0) {
+            echo "</div>";
+        }
+    }
+    ?>
+</div>

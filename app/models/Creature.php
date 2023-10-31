@@ -15,34 +15,48 @@ class Creature
     }
 
     function privateCreatureHtml() {
-        $result = '<div>';
-        $result .= '<div>';
-        $result .= '<div>';
-        $result .= '<h2>' . $this->getName() . '</h2>';
-        $result .= '<p>' . $this->getDescription() . '</p>';
-        $result .= '<a type="button" href="creature/detail.php?id=' . $this->getIdCreature() . '">Detalles</a>';
-        $result .= '<a type="button" href="creature/update.php?id=' . $this->getIdCreature() . '">Modificar</a> ';
-        $result .= '<a type="button" href="../../controllers/creature/deleteController.php?id=' . $this->getIdCreature() . '">Borrar</a> ';
-        $result .= '</div>';
-        $result .= '</div>';
+        $id = $this->getIdCreature();
+        $name = $this->getName();
+        $description = $this->getDescription();
 
+        // Start a container for a 4-column wide space
+        $result = "<div class='col-3'>";
+        $result .= "<div class='card'>";
+        $result .= "<div class='card-body'>";
+        $result .= "<h5 class='card-title'>{$name}</h5>";
+        $result .= "<p class='card-text'>{$description}</p>";
+        $result .= "<a href='creature/detail.php?id={$id}' class='btn btn-primary'>Detalles</a> ";
+        $result .= "<a href='creature/update.php?id={$id}' class='btn btn-secondary'>Modificar</a> ";
+        $result .= "<a href='../../controllers/creature/deleteController.php?id={$id}' class='btn btn-danger'>Borrar</a> ";
+        $result .= "</div>"; // Close card-body
+        $result .= "</div>"; // Close card
+        $result .= "</div>"; // Close col-md-4
 
         return $result;
     }
+
+
 
     function publicCreatureHtml() {
-        $result = '<div>';
-        $result .= '<div>';
-        $result .= '<div>';
-        $result .= '<h2>' . $this->getName() . '</h2>';
-        $result .= '<p>' . $this->getDescription() . '</p>';
-        $result .= '<a type="button" href="creature/detail.php?id=' . $this->getIdCreature() . '">Detalles</a>';
-        $result .= '</div>';
-        $result .= '</div>';
+        $id = $this->getIdCreature();
+        $name = $this->getName();
+        $description = $this->getDescription();
 
+        // Start a container for a 4-column wide space
+        $result = "<div class='col-3'>";
+        $result .= "<div class='card'>";
+        $result .= "<div class='card-body'>";
+        $result .= "<h5 class='card-title'>{$name}</h5>";
+        $result .= "<p class='card-text'>{$description}</p>";
+        $result .= "<a href='creature/detail.php?id={$id}' class='btn btn-primary'>Detalles</a>";
+        $result .= "</div>"; // Close card-body
+        $result .= "</div>"; // Close card
+        $result .= "</div>"; // Close col-md-4
 
         return $result;
     }
+
+
 
     /**
      * @return mixed
