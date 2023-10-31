@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['globalVar'] = "./../../../../";
 require_once __DIR__ . "/../../../../template/header.php";
 ?>
 
