@@ -28,7 +28,7 @@ function editAction() {
     $candidateDAO = new CreatureDAO();
     $candidateDAO->update($creature);
 
-    header('Location: ../../public/views/index.php');
+    header('Location: ../../private/views/index.php');
 }
 
 ?>

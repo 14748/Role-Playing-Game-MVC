@@ -12,6 +12,6 @@ function deleteAction() {
     $candidateDAO = new CreatureDAO();
     $candidateDAO->delete($id);
 
-    header('Location: ../../public/views/index.php');
+    header('Location: ../../private/views/index.php');
 }
 ?>

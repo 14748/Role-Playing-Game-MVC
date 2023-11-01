@@ -6,8 +6,6 @@ require_once __DIR__ . "/../../../template/header.php";
 
 $creatures = indexAction();
 
-
-
 ?>
 
 <div class="container">
@@ -21,11 +19,11 @@ $creatures = indexAction();
             echo '<div class="row mt-2">';
         }
 
-        echo $creature->publicCreatureHtml();
+        echo $creature->privateCreatureHtml();
 
         $count += 1;
 
-        if ($count == count($creatures) && $count % 3 != 0) {
+        if ($count == count($creatures) && $count % 4 != 0) {
             echo "</div>";
         }
     }
