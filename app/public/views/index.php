@@ -14,7 +14,7 @@ $creatures = indexAction();
     <?php
     $count = 0;
     foreach ($creatures as $creature) {
-        if ($count % 3 == 0) {
+        if ($count % 4 == 0) {
             if ($count > 0) {
                 echo "</div>";
             }
