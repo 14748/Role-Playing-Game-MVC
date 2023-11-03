@@ -21,6 +21,8 @@
 ### Public/Private Detalles
 ![image](https://github.com/14748/Role-Playing-Game-MVC/assets/99936563/360bd932-e55f-41c2-a3f5-86ebf65f3536)
 
+## Utilizacion
+
 ####   Para su utilizacion simplemente clona el repositorio y mediante un interprete de php ejecuta la web. Sera necesaria una base mysql adecuada, se encuentra un scrip para generar esta en persistance
 
 ## Idea de arquitectura
