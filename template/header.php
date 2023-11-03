@@ -23,7 +23,7 @@ $BASE_URI = $GLOBALS['globalVar'];
         <?php
         echo '<a href="' . $BASE_URI . 'index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">';
 
-                echo '<img src="' . $BASE_URI . 'assets/img/logo.jpg" width="40" height="32" alt="Company Logo">';
+                echo '<img src="' . $BASE_URI . 'assets/img/biggie.jpg" width="40" height="32" alt="Company Logo">';
             ?>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

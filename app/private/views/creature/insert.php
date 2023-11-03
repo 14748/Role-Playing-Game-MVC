@@ -4,7 +4,7 @@ require_once __DIR__ . "/../../../../template/header.php";
 ?>
 
 <div class="container">
-    <h2 class="my-4">Creature Form</h2>
+    <h2 class="my-4">Crear criatura</h2>
 
     <form method="post" action="../../../controllers/creature/insertController.php">
 
